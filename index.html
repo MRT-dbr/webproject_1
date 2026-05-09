@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="NovaSphere — futuristic hub for creators, developers, and innovators. AI tools, learning, community, and innovation." />
+  <title>NovaSphere — Future of Digital Creativity</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <!-- Loading overlay -->
+  <div id="loader" class="loader" aria-live="polite" aria-busy="true">
+    <div class="loader__inner">
+      <div class="loader__orbit" aria-hidden="true"></div>
+      <span class="loader__text">NovaSphere</span>
+      <div class="loader__bar"><span class="loader__bar-fill"></span></div>
+    </div>
+  </div>
+
+  <!-- Custom cursor (desktop, respects reduced motion) -->
+  <div class="cursor cursor--ring" id="cursor-ring" aria-hidden="true"></div>
+  <div class="cursor cursor--dot" id="cursor-dot" aria-hidden="true"></div>
+
+  <!-- Easter egg toast -->
+  <div id="egg-toast" class="egg-toast" role="status" aria-live="polite" hidden></div>
+
+  <!-- Floating nav -->
+  <header class="site-header" id="site-header">
+    <nav class="nav glass-nav" aria-label="Primary">
+      <a href="#hero" class="nav__brand">
+        <span class="nav__logo" aria-hidden="true"></span>
+        <span>NovaSphere</span>
+      </a>
+      <button type="button" class="nav__toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+        <span class="visually-hidden">Menu</span>
+      </button>
+      <ul class="nav__menu" id="nav-menu">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#dashboard">Dashboard</a></li>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#community">Community</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav__actions">
+        <button type="button" class="btn-icon" id="theme-toggle" aria-label="Toggle light and dark theme">
+          <span class="theme-icon theme-icon--moon" aria-hidden="true"></span>
+          <span class="theme-icon theme-icon--sun" aria-hidden="true"></span>
+        </button>
+        <a href="#pricing" class="btn btn--small btn--glow">Get Pro</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <!-- Hero -->
+    <section class="hero" id="hero">
+      <div class="hero__bg" aria-hidden="true">
+        <canvas id="particle-canvas" class="hero__canvas"></canvas>
+        <div class="hero__gradient"></div>
+        <div class="hero__grid"></div>
+      </div>
+      <!-- Sound-inspired waveform decoration -->
+      <div class="sound-bars" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <div class="hero__content container">
+        <p class="hero__eyebrow" data-animate="fade-up">Next-gen platform · Est. 2035</p>
+        <h1 class="hero__title" data-animate="fade-up">
+          Welcome to the Future of <span class="text-gradient">Digital Creativity</span>
+        </h1>
+        <p class="hero__lead" data-animate="fade-up">
+          Discover AI tools, immersive learning, dev resources, and a thriving community — unified in one cinematic experience.
+        </p>
+        <div class="hero__cta" data-animate="fade-up">
+          <a href="#features" class="btn btn--primary btn--glow">Explore the Future</a>
+          <a href="#community" class="btn btn--outline">Join the Community</a>
+        </div>
+        <div class="hero__visual" data-animate="fade-up" data-parallax="0.15">
+          <div class="holo-card">
+            <div class="holo-card__ring"></div>
+            <div class="holo-card__core">
+              <div class="holo-card__chip">AI</div>
+              <p class="holo-card__label">Neural Layer Active</p>
+              <div class="holo-card__pulse"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero__scroll-hint" aria-hidden="true">
+        <span>Scroll</span>
+        <span class="hero__scroll-line"></span>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="section features" id="features">
+      <div class="container">
+        <header class="section__header">
+          <h2 class="section__title">Everything you need to build tomorrow</h2>
+          <p class="section__subtitle">Modular hubs tuned for makers — hover each card to preview the glow signature.</p>
+        </header>
+        <div class="feature-grid">
+          <article class="feature-card" data-animate="fade-up">
+            <div class="feature-card__icon">⚡</div>
+            <h3>AI Tools Hub</h3>
+            <p>Prompt pipelines, model routers, and workflow templates in one glass cockpit.</p>
+          </article>
+          <article class="feature-card" data-animate="fade-up">
+            <div class="feature-card__icon">📚</div>
+            <h3>Learning Academy</h3>
+            <p>Structured tracks with holographic progress — learn at the speed of curiosity.</p>
+          </article>
+          <article class="feature-card" data-animate="fade-up">
+            <div class="feature-card__icon">✦</div>
+            <h3>Creative Showcase</h3>
+            <p>Exhibit motion, 3D, and generative art with cinematic portfolio grids.</p>
+          </article>
+          <article class="feature-card" data-animate="fade-up">
+            <div class="feature-card__icon">{ }</div>
+            <h3>Developer Resources</h3>
+            <p>SDKs, APIs, sandboxes, and infra recipes — ship faster with less friction.</p>
+          </article>
+          <article class="feature-card" data-animate="fade-up">
+            <div class="feature-card__icon">💬</div>
+            <h3>Community Discussions</h3>
+            <p>Threads that feel alive — presence, reactions, and live typing shimmer.</p>
+          </article>
+          <article class="feature-card" data-animate="fade-up">
+            <div class="feature-card__icon">◇</div>
+            <h3>Innovation Labs</h3>
+            <p>Experiment with prototypes in isolated quantum-ready workspaces.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dashboard preview -->
+    <section class="section dashboard" id="dashboard">
+      <div class="container">
+        <header class="section__header">
+          <h2 class="section__title">Interactive dashboard preview</h2>
+          <p class="section__subtitle">A glimpse of your command center — metrics breathe in real time.</p>
+        </header>
+        <div class="dash-shell glass-panel" data-animate="fade-up">
+          <aside class="dash-shell__sidebar">
+            <div class="dash-nav-item is-active">Overview</div>
+            <div class="dash-nav-item">Signals</div>
+            <div class="dash-nav-item">Labs</div>
+            <div class="dash-nav-item">Team</div>
+          </aside>
+          <div class="dash-shell__main">
+            <div class="dash-top">
+              <div>
+                <p class="dash-label">Live throughput</p>
+                <p class="dash-stat"><span class="counter" data-target="128430">0</span> req/s</p>
+              </div>
+              <div class="dash-notifications">
+                <span class="dash-badge dash-badge--pulse">3 alerts</span>
+                <span class="dash-badge">Deploy OK</span>
+              </div>
+            </div>
+            <div class="dash-widgets">
+              <div class="dash-widget dash-widget--chart">
+                <p class="dash-widget__title">Neural activity</p>
+                <div class="mini-chart" aria-hidden="true">
+                  <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                </div>
+              </div>
+              <div class="dash-widget">
+                <p class="dash-widget__title">Creators online</p>
+                <p class="dash-big"><span class="counter" data-target="8421">0</span></p>
+              </div>
+              <div class="dash-widget dash-widget--holo">
+                <p class="dash-widget__title">Holo widget</p>
+                <div class="holo-ring-small"></div>
+              </div>
+            </div>
+            <div class="dash-activity">
+              <p class="dash-widget__title">Recent activity</p>
+              <ul class="activity-list">
+                <li><span class="dot dot--cyan"></span> nova.team shipped “Vision OS” bundle</li>
+                <li><span class="dot dot--purple"></span> Aria unlocked Quantum 201 certificate</li>
+                <li><span class="dot dot--blue"></span> New model bridge: GPT-Nova linked</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Courses -->
+    <section class="section courses" id="courses">
+      <div class="container">
+        <header class="section__header">
+          <h2 class="section__title">Courses &amp; learning</h2>
+          <p class="section__subtitle">Futuristic tracks with tangible milestones — progress you can feel.</p>
+        </header>
+        <div class="course-grid">
+          <article class="course-card" data-animate="fade-up">
+            <div class="course-card__thumb course-card__thumb--ai"></div>
+            <h3>AI Engineering</h3>
+            <p>Fine-tuning, eval harnesses, and responsible deployment patterns.</p>
+            <div class="course-meta"><span>12 modules</span><span>Intermediate</span></div>
+            <div class="progress"><span class="progress__fill" style="--p:72%"></span></div>
+            <p class="progress__label">72% cohort completion</p>
+          </article>
+          <article class="course-card" data-animate="fade-up">
+            <div class="course-card__thumb course-card__thumb--sec"></div>
+            <h3>Cybersecurity</h3>
+            <p>Zero-trust architecture, threat modeling, and resilient systems design.</p>
+            <div class="course-meta"><span>9 modules</span><span>Advanced</span></div>
+            <div class="progress"><span class="progress__fill" style="--p:54%"></span></div>
+            <p class="progress__label">54% cohort completion</p>
+          </article>
+          <article class="course-card" data-animate="fade-up">
+            <div class="course-card__thumb course-card__thumb--ux"></div>
+            <h3>UI/UX Design</h3>
+            <p>Spatial interfaces, motion systems, and accessibility-first craft.</p>
+            <div class="course-meta"><span>10 modules</span><span>All levels</span></div>
+            <div class="progress"><span class="progress__fill" style="--p:88%"></span></div>
+            <p class="progress__label">88% cohort completion</p>
+          </article>
+          <article class="course-card" data-animate="fade-up">
+            <div class="course-card__thumb course-card__thumb--qc"></div>
+            <h3>Quantum Computing</h3>
+            <p>Circuits, algorithms intuition, and hybrid classical workflows.</p>
+            <div class="course-meta"><span>8 modules</span><span>Expert</span></div>
+            <div class="progress"><span class="progress__fill" style="--p:41%"></span></div>
+            <p class="progress__label">41% cohort completion</p>
+          </article>
+          <article class="course-card" data-animate="fade-up">
+            <div class="course-card__thumb course-card__thumb--sd"></div>
+            <h3>Software Development</h3>
+            <p>Modern stacks, observability, and platform engineering fundamentals.</p>
+            <div class="course-meta"><span>14 modules</span><span>Beginner+</span></div>
+            <div class="progress"><span class="progress__fill" style="--p:65%"></span></div>
+            <p class="progress__label">65% cohort completion</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Community -->
+    <section class="section community" id="community">
+      <div class="container">
+        <header class="section__header">
+          <h2 class="section__title">Community &amp; voices</h2>
+          <p class="section__subtitle">Profiles, proof, and presence — your orbit expands here.</p>
+        </header>
+        <div class="community-layout">
+          <div class="profile-row">
+            <article class="profile-card" data-animate="fade-up">
+              <div class="profile-card__avatar" style="--hue:200">M</div>
+              <h3>Mira Chen</h3>
+              <p class="profile-card__role">Creative Technologist</p>
+              <p class="profile-card__bio">Building synesthetic interfaces for live stages.</p>
+            </article>
+            <article class="profile-card" data-animate="fade-up">
+              <div class="profile-card__avatar" style="--hue:270">K</div>
+              <h3>Kai Okonkwo</h3>
+              <p class="profile-card__role">ML Engineer</p>
+              <p class="profile-card__bio">Latency hunter. Evals enthusiast. Coffee optional.</p>
+            </article>
+            <article class="profile-card" data-animate="fade-up">
+              <div class="profile-card__avatar" style="--hue:320">S</div>
+              <h3>Sofia Reyes</h3>
+              <p class="profile-card__role">Product Designer</p>
+              <p class="profile-card__bio">Design systems that feel like sci-fi, read like poetry.</p>
+            </article>
+          </div>
+          <div class="community-secondary">
+            <div class="testimonials glass-panel" data-animate="fade-up">
+              <blockquote class="testimonial testimonial--glow">
+                <p>“NovaSphere turned scattered tabs into a single luminous workspace.”</p>
+                <footer>— Jordan Vale · Indie founder</footer>
+              </blockquote>
+              <blockquote class="testimonial">
+                <p>“The dashboard alone sells the fantasy — then the courses deliver.”</p>
+                <footer>— Eli Navarro · Student ambassador</footer>
+              </blockquote>
+            </div>
+            <div class="discussion-board glass-panel" data-animate="fade-up">
+              <h3 class="discussion-board__title">Live discussion preview</h3>
+              <div class="discussion-live">
+                <span class="live-dot"></span> <span id="discussion-topic">Thread: Best prompting stacks for 2035?</span>
+              </div>
+              <ul class="chat-preview">
+                <li><strong>@neonforge</strong> Try cascading critiques — smaller models first.</li>
+                <li><strong>@vectorleaf</strong> Nova Labs has a template for that 🚀</li>
+                <li class="chat-preview__typing"><span></span><span></span><span></span> Someone is typing…</li>
+              </ul>
+            </div>
+            <div class="leaderboard glass-panel" data-animate="fade-up">
+              <h3 class="leaderboard__title">Weekly innovators</h3>
+              <ol class="leaderboard__list">
+                <li><span class="rank">1</span> Vega Dynamics <span class="score">9.8k</span></li>
+                <li><span class="rank">2</span> Pulse Labs <span class="score">9.2k</span></li>
+                <li><span class="rank">3</span> Orbit Studio <span class="score">8.7k</span></li>
+                <li><span class="rank">4</span> Prism Collective <span class="score">8.1k</span></li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="section gallery" id="gallery">
+      <div class="container">
+        <header class="section__header">
+          <h2 class="section__title">Innovation gallery</h2>
+          <p class="section__subtitle">Digital artifacts from the edge — hover to decode mission briefs.</p>
+        </header>
+        <div class="gallery-grid">
+          <article class="gallery-item tall" data-animate="fade-up">
+            <div class="gallery-item__media gallery-item__media--1"></div>
+            <div class="gallery-item__overlay">
+              <h3>Nebula OS</h3>
+              <p>Ambient shell for spatial multitasking.</p>
+            </div>
+          </article>
+          <article class="gallery-item" data-animate="fade-up">
+            <div class="gallery-item__media gallery-item__media--2"></div>
+            <div class="gallery-item__overlay">
+              <h3>Flux Composer</h3>
+              <p>Generative audio visuals in WebGPU.</p>
+            </div>
+          </article>
+          <article class="gallery-item wide" data-animate="fade-up">
+            <div class="gallery-item__media gallery-item__media--3"></div>
+            <div class="gallery-item__overlay">
+              <h3>Aether Grid</h3>
+              <p>Distributed creative renders worldwide.</p>
+            </div>
+          </article>
+          <article class="gallery-item" data-animate="fade-up">
+            <div class="gallery-item__media gallery-item__media--4"></div>
+            <div class="gallery-item__overlay">
+              <h3>Mirror Atlas</h3>
+              <p>Knowledge graph for design tokens.</p>
+            </div>
+          </article>
+          <article class="gallery-item" data-animate="fade-up">
+            <div class="gallery-item__media gallery-item__media--5"></div>
+            <div class="gallery-item__overlay">
+              <h3>Quantum Sketch</h3>
+              <p>Hybrid classical-quantum prototyping UI.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="section pricing" id="pricing">
+      <div class="container">
+        <header class="section__header">
+          <h2 class="section__title">Membership</h2>
+          <p class="section__subtitle">Scale from curious explorer to orbital pioneer.</p>
+        </header>
+        <div class="pricing-grid">
+          <article class="price-card" data-animate="fade-up">
+            <h3>Free</h3>
+            <p class="price-card__price"><span>$0</span><small>/mo</small></p>
+            <ul class="price-card__list">
+              <li>Browse news &amp; gallery</li>
+              <li>Community read-only</li>
+              <li>Starter AI snippets</li>
+            </ul>
+            <a href="#contact" class="btn btn--outline btn--block">Start free</a>
+          </article>
+          <article class="price-card price-card--featured" data-animate="fade-up">
+            <div class="price-card__badge">Recommended</div>
+            <h3>Pro</h3>
+            <p class="price-card__price"><span>$29</span><small>/mo</small></p>
+            <ul class="price-card__list">
+              <li>Full academy access</li>
+              <li>Dashboard analytics</li>
+              <li>Priority labs queue</li>
+              <li>Creator spotlight</li>
+            </ul>
+            <a href="#contact" class="btn btn--primary btn--glow btn--block">Go Pro</a>
+          </article>
+          <article class="price-card" data-animate="fade-up">
+            <h3>Ultra</h3>
+            <p class="price-card__price"><span>$79</span><small>/mo</small></p>
+            <ul class="price-card__list">
+              <li>Everything in Pro</li>
+              <li>Dedicated mentor sessions</li>
+              <li>Enterprise API keys</li>
+              <li>White-label showcases</li>
+            </ul>
+            <a href="#contact" class="btn btn--outline btn--block">Contact sales</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog / News -->
+    <section class="section news" id="news">
+      <div class="container">
+        <header class="section__header">
+          <h2 class="section__title">Latest intelligence</h2>
+          <p class="section__subtitle">Signals from the frontier — AI, systems, and culture.</p>
+        </header>
+        <div class="news-grid">
+          <article class="news-card" data-animate="fade-up">
+            <div class="news-card__thumb news-card__thumb--a"></div>
+            <div class="news-card__body">
+              <span class="news-card__tag">AI</span>
+              <h3>Multimodal routers go ambient</h3>
+              <p>New orchestration patterns trim latency while boosting safety envelopes.</p>
+              <a href="#" class="news-card__link">Read brief →</a>
+            </div>
+          </article>
+          <article class="news-card" data-animate="fade-up">
+            <div class="news-card__thumb news-card__thumb--b"></div>
+            <div class="news-card__body">
+              <span class="news-card__tag">Security</span>
+              <h3>Post-quantum readiness checklist</h3>
+              <p>What teams should verify before the cryptographic cliff era.</p>
+              <a href="#" class="news-card__link">Read brief →</a>
+            </div>
+          </article>
+          <article class="news-card" data-animate="fade-up">
+            <div class="news-card__thumb news-card__thumb--c"></div>
+            <div class="news-card__body">
+              <span class="news-card__tag">Design</span>
+              <h3>Glass 3.0 — depth without noise</h3>
+              <p>Elevation cues that keep HUDs legible in daylight and dark.</p>
+              <a href="#" class="news-card__link">Read brief →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact & Footer -->
+    <section class="section contact" id="contact">
+      <div class="container contact__grid">
+        <div class="contact__intro">
+          <h2 class="section__title">Deploy a conversation</h2>
+          <p class="section__subtitle">Tell us about your next build — we route it to the right constellation.</p>
+          <form class="contact-form glass-panel" id="contact-form" novalidate>
+            <label class="field">
+              <span>Name</span>
+              <input type="text" name="name" autocomplete="name" required placeholder="Ada Lovelace" />
+            </label>
+            <label class="field">
+              <span>Email</span>
+              <input type="email" name="email" autocomplete="email" required placeholder="you@domain.com" />
+            </label>
+            <label class="field">
+              <span>Message</span>
+              <textarea name="message" rows="4" required placeholder="What future are you shipping?"></textarea>
+            </label>
+            <button type="submit" class="btn btn--primary btn--glow btn--block">Transmit</button>
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+        <div class="newsletter glass-panel">
+          <h3>Orbital newsletter</h3>
+          <p>Weekly pulse — tools, drops, and invite-only lab seats.</p>
+          <form class="newsletter-form" id="newsletter-form">
+            <label class="visually-hidden" for="news-email">Email</label>
+            <input id="news-email" type="email" name="newsletter" placeholder="Join the signal list" required />
+            <button type="submit" class="btn btn--outline">Subscribe</button>
+          </form>
+          <p class="newsletter-note" id="newsletter-status" role="status" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a href="#hero" class="footer__logo">NovaSphere</a>
+        <p>Futuristic hub for tools, learning, and community.</p>
+      </div>
+      <div class="footer__cols">
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__social">
+        <a href="#" class="social social--glow" aria-label="X / Twitter"><span>𝕏</span></a>
+        <a href="#" class="social social--glow" aria-label="GitHub"><span>⌘</span></a>
+        <a href="#" class="social social--glow" aria-label="Discord"><span>◇</span></a>
+        <a href="#" class="social social--glow" aria-label="YouTube"><span>▶</span></a>
+      </div>
+    </div>
+    <div class="footer__bottom container">
+      <p>© <span id="year"></span> NovaSphere. Crafted for the next era.</p>
+    </div>
+  </footer>
+
+  <!-- AI Chatbot UI preview (floating) -->
+  <aside class="chatbot-ui" id="chatbot-ui" aria-label="AI assistant preview">
+    <button type="button" class="chatbot-ui__fab" id="chatbot-toggle" aria-expanded="false" aria-controls="chatbot-panel">
+      <span class="chatbot-ui__pulse"></span>
+      <span aria-hidden="true">✦</span>
+      <span class="visually-hidden">Open assistant preview</span>
+    </button>
+    <div class="chatbot-ui__panel glass-panel" id="chatbot-panel" hidden>
+      <div class="chatbot-ui__header">
+        <span>Nova Assistant</span>
+        <span class="chatbot-ui__status">Online</span>
+      </div>
+      <div class="chatbot-ui__messages">
+        <div class="msg msg--bot">Hi — I’m a UI preview. Ask how to navigate NovaSphere.</div>
+        <div class="msg msg--user">Where do I start?</div>
+        <div class="msg msg--bot">Try <strong>Explore the Future</strong> or jump to <strong>Courses</strong> for structured paths.</div>
+      </div>
+      <div class="chatbot-ui__input">
+        <input type="text" placeholder="Type a message…" aria-label="Preview message input" disabled />
+        <button type="button" class="btn btn--small btn--primary" disabled>Send</button>
+      </div>
+      <p class="chatbot-ui__hint">Preview only — wire your model later.</p>
+    </div>
+  </aside>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
